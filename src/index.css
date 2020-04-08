@@ -1,10 +1,6 @@
 body {
-    margin: 0;
-    font-family: 'Bungee', sans-serif;
-    background-color: #000;
-    text-align: center;
-    text-transform: uppercase;
-    color: #FFF;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  font-family: 'Bungee', sans-serif;
+  background-color: #000;
+  text-align: center;
+  text-transform: uppercase;
 }
