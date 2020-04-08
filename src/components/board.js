@@ -1,32 +1,31 @@
-import React, { useEffect, useRef } from 'react';
-
-const unit = 15;
-const boardSize = 750;
+import React, { useEffect, useRef } from "react";
+import { UNIT, BOARD_SIZE } from "config/const";
 
 export default function Board() {
-
     const canvasRef = useRef();
     useEffect(function() {
         const canvas = canvasRef.current;
-        const context = canvas.getContext('2d');
+        const context = canvas.getContext("2d");
 
         context.beginPath();
-        context.strokeStyle = '#001900';
-        for (let i = unit * 2; i <= boardSize; i += unit * 2) {
+        context.strokeStyle = "#001900";
+        for (let i = UNIT * 2; i <= BOARD_SIZE; i += UNIT * 2) {
             context.moveTo(i, 0);
-            context.lineTo(i, boardSize);
+            context.lineTo(i, BOARD_SIZE);
         }
-        for (let i = unit * 2; i <= boardSize; i += unit * 2) {
+        for (let i = UNIT * 2; i <= BOARD_SIZE; i += UNIT * 2) {
             context.moveTo(0, i);
-            context.lineTo(boardSize, i);
+            context.lineTo(BOARD_SIZE, i);
         }
         context.stroke();
         context.closePath();
-
     }, []);
-    return <canvas ref = { canvasRef }
-    id = "board"
-    width = { boardSize }
-    height = { boardSize }
-    className = "board" / >
+    return ( <
+        canvas ref = { canvasRef }
+        id = "board"
+        width = { BOARD_SIZE }
+        height = { BOARD_SIZE }
+        className = "board" /
+        >
+    );
 }
